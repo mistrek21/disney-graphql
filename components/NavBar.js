@@ -1,0 +1,26 @@
+import Link from 'next/link'
+import Image from 'next/image'
+import Logo from '../public/disney.png'
+
+function NavBar({ account }) {
+    return (
+        <div className="navbar">
+            <div className="logo-wrapper">
+                <Link href="/">
+                    <Image
+                        src={Logo}
+                        alt="Disney Logo"
+                        width={90}
+                        height={50}
+                    />
+                </Link>
+            </div>
+            <div className="account-info">
+                <p>Welcome {account.username}</p>
+                <img className="avatar" src={account.avatar.url} />
+            </div>
+        </div>
+    )
+}
+
+export default NavBar
